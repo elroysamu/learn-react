@@ -1,5 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// Import React library
+// Import React and ReactDOM libraries
 
 // Create a React element
 // React.createElement takes three arguments:

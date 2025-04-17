@@ -1,0 +1,25 @@
+{
+  "name": "samu",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elroysamu/learn-react.git"
+  },
+  "author": "samu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elroysamu/learn-react/issues"
+  },
+  "homepage": "https://github.com/elroysamu/learn-react#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
