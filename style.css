@@ -1,8 +1,26 @@
-/* General body styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-    background-color: #5a2d2d;
-    color: #000000;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: solid 1px black;
+}
+
+.nav-items > ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.card{
+    border: solid 1px rgb(77, 146, 60);
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+}
+
+.restaurant-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
