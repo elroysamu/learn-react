@@ -130,7 +130,7 @@ export const mockData = [
         cloudnaryImageUrl: "https://picsum.photos/215",
         name: "Mediterranean Sunset",
         cusines: "Mediterranean",
-        rating: 4.6,
+        rating: 3.6,
         deliveryTime: 27,
         costForTwo: 400
     }
