@@ -1,33 +1,38 @@
 import { RestaurantCard } from "./RestaurantCard";
-import { mockData as restaurants } from "../utils/mock";
 import{ useState, useEffect } from "react";
 import { fetchRestaurantData } from "../utils/mockApis";
+import { Atom } from 'react-loading-indicators';
+
 
 // create a state variable which will hold the restaurant data
 // create a button which will filter the restaurant data based on the rating
 function filterRestaurants(listOfRestaurants) {
     const filteredRestaurants = listOfRestaurants.filter(restaurant => restaurant.rating > 4);
-    console.log(filteredRestaurants);
     return filteredRestaurants;
 }
 
 export const Body = () => {    
-    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-    const  [listOfRestaurants, setListOfRestaurants] = useState(restaurants);
+    const [filteredRestaurantsList, setFilteredRestaurantsList] = useState([]);
+    const  [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
         fetchData();
-    })
+    }, [])
 
     const fetchData = async () => {
         const data = await fetchRestaurantData();
         const json = await data.json();
         setListOfRestaurants(json.data);
-        setFilteredRestaurants(json.data);
+        setFilteredRestaurantsList(json.data);
     };
+    
 
-    return (
+    return listOfRestaurants.length === 0? (
+        <div className="loader-container">
+        <Atom color="#11399b" size="large" text="" textColor="" />
+      </div>       
+    ) :(
         <div className="body">
             <div className="search-container">
                 <input type="text" placeholder="Search..." />
@@ -50,7 +55,7 @@ export const Body = () => {
                         const filteredRestaurants = listOfRestaurants.filter((restaurant) =>
                             restaurant.name.toLowerCase().includes(searchText.toLowerCase())
                         );
-                        setFilteredRestaurants(filteredRestaurants);
+                        setFilteredRestaurantsList(filteredRestaurants);
                     }}
                 >
                     Search
@@ -58,13 +63,13 @@ export const Body = () => {
 
 
                 <button className="filter-button" onClick={ () =>{
-                    const filteredRestaurants = filterRestaurants(restaurants)
-                    setFilteredRestaurants(filteredRestaurants);
-                }}>Filter</button>
+                    const filteredRestaurants = filterRestaurants(filteredRestaurantsList)
+                    setFilteredRestaurantsList(filteredRestaurants);
+                }}>top rated</button>
                 <button className="sort-button">Sort</button>
             </div>
             <div className="restaurant-list">
-               { filterRestaurants.map((restaurant) => (
+               { filteredRestaurantsList.map((restaurant) => (
                     <RestaurantCard
                         key={restaurant.cloudnaryImageId}
                         restaurant = {restaurant}

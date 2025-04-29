@@ -24,3 +24,11 @@ header {
     flex-wrap: wrap;
     gap: 20px;
 }
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
