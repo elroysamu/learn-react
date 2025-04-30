@@ -7,6 +7,6 @@ export function fetchRestaurantData() {
             resolve({
                 json: () => Promise.resolve({ data: mockData })
             });
-        }, 10);
+        }, 2000);
     });
 }

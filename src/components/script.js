@@ -1,18 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Header } from './Header';
-import { Body } from './Body';
+import { useState, useEffect } from 'react';
 
-const AppLayout = () => {
+function BadComponent({ showState }) {
+  if (showState) {
+    const [count, setCount] = useState(0); // ❌ Invalid Hook call
     return (
-        <div className="app">
-            <Header />
-            <Body />
-        </div>
+      <div>
+        <p>Count: {count}</p>
+        <button onClick={() => setCount(count + 1)}>Increment</button>
+      </div>
     );
-};
+  }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<AppLayout />);
+  return <p>No state here</p>;
+}
+
+ function App() {
+  const [toggle, setToggle] = useState(true);
+
+  return (
+    <div>
+      <button onClick={() => setToggle(!toggle)}>Toggle State</button>
+      <BadComponent showState={toggle} />
+    </div>
+  );
+}
+
+
+
+
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 
 
 
