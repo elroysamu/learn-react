@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { fetchRestaurantMenu } from "../utils/mockApis";
 
 export const RestaurantMenuCard = () => {
-    const [restaurantDetails, setRestaurantDetails] = useState(null);
+    const [restaurantDetails, setRestaurantDetails] = useState([]);
 
     const { id } = useParams();
 
@@ -14,18 +14,21 @@ export const RestaurantMenuCard = () => {
     const fetchRestaurantMenus = async () => {
         const data = await fetchRestaurantMenu(id);
         const json = await data.json();
-        console.log(json);
+       setRestaurantDetails(json.data);
         
-        setRestaurantDetails(json);
     };
-
-    console.log(JSON.stringify(restaurantDetails),id);
     
 
-    return (
+    
+    
+
+    return   restaurantDetails.length === 0? (
+        <div className="loader-container">
+            <h1>Loading...</h1>
+        </div>
+    ):(
         <div className="restaurant-menu-card">
-            <h1>{restaurantDetails[0].name}</h1>
-            <h2>{restaurantDetails[0].description}</h2>
+            <h1>{JSON.stringify(restaurantDetails[0])}</h1>
         </div>
     );
 }

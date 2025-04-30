@@ -16,10 +16,6 @@ export function fetchRestaurantMenu(restaurantId) {
     return new Promise((resolve) => {
         setTimeout(() => {
             const menu = restaurantMenusMock[restaurantId];
-            console.log(restaurantId);
-            console.log(JSON.stringify(menu));
-
-            
             resolve({
                 json: () => Promise.resolve({ data: menu || [] })
             });
