@@ -1,7 +1,8 @@
 import { RestaurantCard } from "./RestaurantCard";
 import{ useState, useEffect } from "react";
-import { fetchRestaurantData } from "../utils/mockApis";
+import { fetchRestaurantList } from "../utils/mockApis";
 import { Atom } from 'react-loading-indicators';
+import { Link } from "react-router";
 
 
 // create a state variable which will hold the restaurant data
@@ -21,7 +22,7 @@ export const Body = () => {
     }, [])
 
     const fetchData = async () => {
-        const data = await fetchRestaurantData();
+        const data = await fetchRestaurantList();
         const json = await data.json();
         setListOfRestaurants(json.data);
         setFilteredRestaurantsList(json.data);
@@ -70,10 +71,10 @@ export const Body = () => {
             </div>
             <div className="restaurant-list">
                { filteredRestaurantsList.map((restaurant) => (
-                    <RestaurantCard
-                        key={restaurant.cloudnaryImageId}
-                        restaurant = {restaurant}
-                    />
+                    <Link key={restaurant.cloudnaryImageId} 
+                        to={"/restaurant/" + restaurant.cloudnaryImageId}>
+                        <RestaurantCard restaurant = {restaurant}/>
+                    </Link>
                 ))}
                 
             </div>
