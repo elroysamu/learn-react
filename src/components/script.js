@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import { Header } from './Header';
 import { Body } from './Body';
@@ -8,54 +8,34 @@ import { Contact } from './Contact';
 import { Error } from './Error';
 import { RestaurantMenuCard } from './RestaurantMenuCard';
 
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header />
-           <Outlet />
-        </div>
-    );
-};
-
-const About = lazy(() =>
-  new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(import('./About'));
-    }, 3000); // 3-second delay
-  })
-);
-
-const appRouter = createBrowserRouter([
-    {
-        path: '/',
-        element: <AppLayout />,
-        children: [
-            {
-                path: '/',
-                element: <Body />
-            },
-            {
-                path: '/about',
-                element: (
-                     <Suspense fallback={<h1>Loading...</h1>}>
-                        <About />
-                    </Suspense>
-                )
-            },
-            {
-                path: '/contact',
-                element: <Contact />
-            },
-            {
-                path: '/restaurant/:id',
-                element: <RestaurantMenuCard/>
-            }
-        ],
-        errorElement: <Error />
+function App() {
+    const [query, setQuery] = useState('');
+    const [results, setResults] = useState([]);
+    
+    const bigList = Array.from({ length: 10000 }, (_, i) => `Item ${i}`);
+   
+    function handleChange(e) {
+    const value = e.target.value;
+    setQuery(value);
+   
+    // Filtering is immediate (UI will lag with big lists)
+    const filtered = bigList.filter(item => item.includes(value));
+    setResults(filtered);
     }
-]);
+   
+    return (
+    <div>
+    <input value={query} onChange={handleChange} />
+    <ul>
+    {results.map((item, i) => <li key={i}>{item}</li>)}
+    </ul>
+    </div>
+    );
+   }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<RouterProvider router={appRouter} />);
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 
 
 
