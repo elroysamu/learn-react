@@ -38,3 +38,98 @@ header {
   text-align: center;
   color: #333;
 }
+
+
+.category-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.category-card {
+  width: 100%;
+  max-width: 600px; /* controls how wide it can grow */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Category name - acts like accordion header */
+.category-name {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.category-name:hover {
+  background-color: #e0e0e0;
+}
+
+/* Collapsible item list (accordion content) */
+.item-list {
+  max-height: 1000px; /* for animation */
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* Item card styles inside item list */
+.item-card {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+  transition: background-color 0.3s ease;
+}
+
+.item-card:last-child {
+  border-bottom: none;
+}
+
+/* Item details */
+.item-name {
+  margin: 0 0 0.3rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.item-description {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.item-price {
+  margin: 0.5rem 0 0 0;
+  font-weight: bold;
+  color: #2c7a7b;
+}
+
+
+.category-header {
+  display: flex;        /* Makes header a flex container */
+  align-items: center;  /* Vertically center the elements */
+  justify-content: space-between; /* Space between the items */
+}
+
+.category-name {
+  margin-right: 10px;   /* Optional: Add space between the name and button */
+}
+
+.accordion-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.accordion-toggle:hover {
+  color: #007BFF;
+}

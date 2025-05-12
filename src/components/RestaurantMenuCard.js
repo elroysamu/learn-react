@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { fetchRestaurantMenu } from "../utils/mockApis";
+import { ResCategory } from "./ResCategory";
 
 export const RestaurantMenuCard = () => {
   const [restaurantDetails, setRestaurantDetails] = useState([]);
@@ -21,7 +22,7 @@ export const RestaurantMenuCard = () => {
     <div className="loader-container">
       <h1>Loading...</h1>
     </div>
-  ) : (
+  ) : (<>
     <div className="restaurant-menu-card">
       <h1 className="res-menu-heading">
         {restaurantDetails.restaurantDetails.name}
@@ -33,5 +34,15 @@ export const RestaurantMenuCard = () => {
         {restaurantDetails.restaurantDetails.address}
       </p>
     </div>
+    <div className="category">
+      {restaurantDetails.category.map((category, index) => (
+        <ResCategory
+          key={index}
+          category={category}
+        />
+      ))}
+    </div>
+
+    </>
   );
 };

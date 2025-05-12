@@ -144,6 +144,12 @@ export const restaurantMenusMock = {
             price: 300,
             available: true,
           },
+          {
+            name: "Penne Arrabiata",
+            description: "Pasta with spicy tomato sauce",
+            price: 270,
+            available: true,
+          },
         ],
       },
       {
@@ -160,6 +166,23 @@ export const restaurantMenusMock = {
             description: "Fresh mozzarella, tomatoes, and basil",
             price: 180,
             available: false,
+          },
+          {
+            name: "Greek Salad",
+            description: "Salad with feta cheese and olives",
+            price: 160,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Desserts",
+        items: [
+          {
+            name: "Tiramisu",
+            description: "Coffee-flavored Italian dessert",
+            price: 200,
+            available: true,
           },
         ],
       },
@@ -187,6 +210,23 @@ export const restaurantMenusMock = {
             price: 120,
             available: false,
           },
+          {
+            name: "Sweet and Sour Pork",
+            description: "Crispy pork with sweet and sour sauce",
+            price: 180,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Soups",
+        items: [
+          {
+            name: "Hot and Sour Soup",
+            description: "Spicy soup with tofu and vegetables",
+            price: 130,
+            available: true,
+          },
         ],
       },
     ],
@@ -211,6 +251,23 @@ export const restaurantMenusMock = {
             name: "Quesadillas",
             description: "Grilled tortillas with cheese and peppers",
             price: 180,
+            available: true,
+          },
+          {
+            name: "Burritos",
+            description: "Large flour tortilla with meat and beans",
+            price: 220,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Sides",
+        items: [
+          {
+            name: "Guacamole & Chips",
+            description: "Avocado dip with crispy tortilla chips",
+            price: 100,
             available: true,
           },
         ],
@@ -239,6 +296,23 @@ export const restaurantMenusMock = {
             price: 190,
             available: true,
           },
+          {
+            name: "Chicken Biryani",
+            description: "Fragrant rice dish with chicken and spices",
+            price: 250,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Breads",
+        items: [
+          {
+            name: "Garlic Naan",
+            description: "Indian flatbread with garlic",
+            price: 60,
+            available: true,
+          },
         ],
       },
     ],
@@ -265,6 +339,23 @@ export const restaurantMenusMock = {
             price: 260,
             available: false,
           },
+          {
+            name: "Tom Yum Soup",
+            description: "Spicy and sour soup with shrimp",
+            price: 220,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Desserts",
+        items: [
+          {
+            name: "Mango Sticky Rice",
+            description: "Sweet rice with coconut milk and mango",
+            price: 180,
+            available: true,
+          },
         ],
       },
     ],
@@ -289,6 +380,23 @@ export const restaurantMenusMock = {
             name: "Ramen Bowl",
             description: "Pork bone broth with noodles and egg",
             price: 350,
+            available: true,
+          },
+          {
+            name: "Tempura",
+            description: "Lightly battered and fried seafood and vegetables",
+            price: 300,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Appetizers",
+        items: [
+          {
+            name: "Edamame",
+            description: "Steamed soybeans with sea salt",
+            price: 120,
             available: true,
           },
         ],
@@ -317,6 +425,23 @@ export const restaurantMenusMock = {
             price: 280,
             available: false,
           },
+          {
+            name: "Escargots",
+            description: "Snails cooked in garlic butter",
+            price: 320,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Pastries",
+        items: [
+          {
+            name: "Croissant",
+            description: "Flaky buttery pastry",
+            price: 100,
+            available: true,
+          },
         ],
       },
     ],
@@ -341,6 +466,23 @@ export const restaurantMenusMock = {
             name: "Kimchi Stew",
             description: "Fermented cabbage stew with pork",
             price: 270,
+            available: true,
+          },
+          {
+            name: "Japchae",
+            description: "Stir-fried glass noodles with vegetables",
+            price: 250,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Sides",
+        items: [
+          {
+            name: "Kimchi",
+            description: "Spicy fermented cabbage",
+            price: 80,
             available: true,
           },
         ],
@@ -369,30 +511,64 @@ export const restaurantMenusMock = {
             price: 200,
             available: false,
           },
+          {
+            name: "Goi Cuon",
+            description: "Fresh spring rolls with shrimp and herbs",
+            price: 180,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Beverages",
+        items: [
+          {
+            name: "Vietnamese Iced Coffee",
+            description: "Strong coffee with condensed milk",
+            price: 120,
+            available: true,
+          },
         ],
       },
     ],
   },
   132: {
     restaurantDetails: {
-      name: "Greek Taverna",
-      description: "Mediterranean flavors with Greek traditions",
-      address: "132 Athens Ave, Greece",
+      name: "Greek Isles",
+      description: "Mediterranean tastes from the Greek islands",
+      address: "132 Athena Ave, Greece",
     },
     category: [
       {
-        name: "Greek Favorites",
+        name: "Greek Specials",
         items: [
           {
-            name: "Moussaka",
-            description: "Baked eggplant and meat casserole",
-            price: 280,
+            name: "Gyro Plate",
+            description: "Lamb gyro with tzatziki and pita",
+            price: 270,
             available: true,
           },
           {
-            name: "Greek Salad",
-            description: "Salad with feta cheese and olives",
-            price: 150,
+            name: "Moussaka",
+            description: "Baked eggplant with meat sauce and béchamel",
+            price: 300,
+            available: true,
+          },
+          {
+            name: "Dolmades",
+            description: "Stuffed grape leaves with rice",
+            price: 160,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Sides",
+        items: [
+          {
+            name: "Tzatziki with Pita",
+            description: "Greek yogurt dip with herbs and garlic",
+            price: 100,
             available: true,
           },
         ],
@@ -401,25 +577,42 @@ export const restaurantMenusMock = {
   },
   133: {
     restaurantDetails: {
-      name: "Paella Palace",
-      description: "Spanish rice dishes and desserts",
-      address: "133 Valencia Rd, Spain",
+      name: "Burger Town",
+      description: "Classic and gourmet burgers with sides",
+      address: "133 Burger Blvd, USA",
     },
     category: [
       {
-        name: "Spanish Specials",
+        name: "Burgers",
         items: [
           {
-            name: "Paella",
-            description: "Spanish rice with seafood and saffron",
-            price: 300,
+            name: "Cheeseburger",
+            description: "Beef patty with cheese, lettuce, and tomato",
+            price: 180,
             available: true,
           },
           {
-            name: "Churros",
-            description: "Fried dough with chocolate dip",
-            price: 140,
+            name: "Bacon Double",
+            description: "Double beef patties with crispy bacon",
+            price: 250,
+            available: true,
+          },
+          {
+            name: "Veggie Burger",
+            description: "Grilled vegetable patty with avocado",
+            price: 160,
             available: false,
+          },
+        ],
+      },
+      {
+        name: "Sides",
+        items: [
+          {
+            name: "Fries",
+            description: "Crispy golden fries",
+            price: 80,
+            available: true,
           },
         ],
       },
@@ -427,24 +620,41 @@ export const restaurantMenusMock = {
   },
   134: {
     restaurantDetails: {
-      name: "Turkish Delight",
-      description: "Hearty Turkish meals and desserts",
-      address: "134 Istanbul St, Turkey",
+      name: "Pizza Planet",
+      description: "Out-of-this-world pizza with creative toppings",
+      address: "134 Mozzarella Lane, USA",
     },
     category: [
       {
-        name: "Turkish Dishes",
+        name: "Pizzas",
         items: [
           {
-            name: "Doner Kebab",
-            description: "Grilled meat with veggies in flatbread",
+            name: "Margherita",
+            description: "Tomato, mozzarella, and basil",
+            price: 200,
+            available: true,
+          },
+          {
+            name: "Pepperoni",
+            description: "Classic pizza with spicy pepperoni",
             price: 220,
             available: true,
           },
           {
-            name: "Baklava",
-            description: "Layered pastry with nuts and syrup",
-            price: 160,
+            name: "BBQ Chicken",
+            description: "Barbecue sauce base with chicken and onions",
+            price: 240,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Drinks",
+        items: [
+          {
+            name: "Soda",
+            description: "Choice of cola, lemon-lime, or orange",
+            price: 60,
             available: true,
           },
         ],
@@ -453,24 +663,41 @@ export const restaurantMenusMock = {
   },
   135: {
     restaurantDetails: {
-      name: "Lebanese Feast",
-      description: "Delicious Lebanese food for all appetites",
-      address: "135 Beirut Ave, Lebanon",
+      name: "Middle East Feast",
+      description: "Aromatic Middle Eastern dishes and grills",
+      address: "135 Falafel Way, Lebanon",
     },
     category: [
       {
-        name: "Middle Eastern",
+        name: "Main Dishes",
         items: [
           {
-            name: "Shawarma Plate",
-            description: "Grilled meat with hummus and salad",
-            price: 240,
+            name: "Shawarma",
+            description: "Spiced meat wrap with garlic sauce",
+            price: 220,
             available: true,
           },
           {
-            name: "Falafel Wrap",
-            description: "Chickpea balls in pita bread",
+            name: "Falafel Plate",
+            description: "Crispy chickpea fritters with hummus",
             price: 180,
+            available: true,
+          },
+          {
+            name: "Kebabs",
+            description: "Grilled meat skewers with spices",
+            price: 240,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Desserts",
+        items: [
+          {
+            name: "Baklava",
+            description: "Sweet pastry with nuts and syrup",
+            price: 160,
             available: true,
           },
         ],
@@ -479,25 +706,42 @@ export const restaurantMenusMock = {
   },
   136: {
     restaurantDetails: {
-      name: "Burger Bliss",
-      description: "Juicy burgers and American sides",
-      address: "136 Burger Ln, USA",
+      name: "Caribbean Catch",
+      description: "Tropical seafood and island flavors",
+      address: "136 Ocean Dr, Jamaica",
     },
     category: [
       {
-        name: "American Grill",
+        name: "Seafood Specials",
         items: [
           {
-            name: "Cheeseburger",
-            description: "Grilled beef patty with cheese",
-            price: 230,
+            name: "Jerk Shrimp",
+            description: "Spicy grilled shrimp with Caribbean spices",
+            price: 280,
             available: true,
           },
           {
-            name: "Buffalo Wings",
-            description: "Spicy chicken wings with ranch",
-            price: 200,
+            name: "Grilled Snapper",
+            description: "Whole fish with herbs and lime",
+            price: 350,
             available: false,
+          },
+          {
+            name: "Coconut Curry Fish",
+            description: "Fish fillet in coconut curry sauce",
+            price: 300,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Appetizers",
+        items: [
+          {
+            name: "Plantain Chips",
+            description: "Crispy fried plantains",
+            price: 90,
+            available: true,
           },
         ],
       },
@@ -505,24 +749,41 @@ export const restaurantMenusMock = {
   },
   137: {
     restaurantDetails: {
-      name: "Mediterranean Table",
-      description: "Fresh, healthy Mediterranean meals",
-      address: "137 Med Rd, Coastline",
+      name: "Soul Kitchen",
+      description: "Comfort food from the American South",
+      address: "137 Southern Ln, USA",
     },
     category: [
       {
-        name: "Mediterranean Cuisine",
+        name: "Southern Comforts",
         items: [
           {
-            name: "Grilled Sea Bass",
-            description: "Herbed fish with lemon sauce",
-            price: 350,
+            name: "Fried Chicken",
+            description: "Crispy seasoned chicken",
+            price: 250,
             available: true,
           },
           {
-            name: "Mediterranean Mezze",
-            description: "Assorted dips and bread",
-            price: 280,
+            name: "Mac & Cheese",
+            description: "Creamy cheese pasta",
+            price: 180,
+            available: true,
+          },
+          {
+            name: "Collard Greens",
+            description: "Slow-cooked greens with seasoning",
+            price: 120,
+            available: true,
+          },
+        ],
+      },
+      {
+        name: "Desserts",
+        items: [
+          {
+            name: "Peach Cobbler",
+            description: "Baked peaches with a biscuit topping",
+            price: 160,
             available: true,
           },
         ],
@@ -530,3 +791,4 @@ export const restaurantMenusMock = {
     ],
   },
 };
+
