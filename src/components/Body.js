@@ -1,4 +1,4 @@
-import { RestaurantCard } from "./RestaurantCard";
+import { RestaurantCard, withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { fetchRestaurantList } from "../utils/mockApis";
 import { Atom } from "react-loading-indicators";
@@ -17,6 +17,7 @@ export const Body = () => {
   const [filteredRestaurantsList, setFilteredRestaurantsList] = useState([]);
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -80,7 +81,11 @@ export const Body = () => {
             key={restaurant.cloudnaryImageId}
             to={"/restaurant/" + restaurant.cloudnaryImageId}
           >
-            <RestaurantCard restaurant={restaurant} />
+            {restaurant.isPromoted ? (
+              <RestaurantCardPromoted restaurant={restaurant} />
+            ) : (
+              <RestaurantCard restaurant={restaurant} />
+            )}
           </Link>
         ))}
       </div>
