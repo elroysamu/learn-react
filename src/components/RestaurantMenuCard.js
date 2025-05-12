@@ -41,7 +41,9 @@ export const RestaurantMenuCard = () => {
           key={index}
           category={category}
           showAccordion={index ===  showAccordionIndex}
-          showAccordionIndex={()=> setShowAccordionIndex(index)}
+          showAccordionIndex={() =>
+            setShowAccordionIndex(prevIndex => (prevIndex === index ? null : index))
+          }
         />
       ))}
     </div>
