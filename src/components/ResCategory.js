@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { ItemList } from "./ItemList";
 
-export const ResCategory = ({ category }) => {
+export const ResCategory = ({ category, showAccordion, showAccordionIndex }) => {
 
-    const [showAccordion, setShowAccordion] = useState(false);
 
     function handleAccordionToggle() {
         // Logic to handle accordion toggle
+        showAccordionIndex();
         console.log("Accordion toggled");
-        setShowAccordion(!showAccordion);
 
     }
 
@@ -20,7 +19,7 @@ export const ResCategory = ({ category }) => {
             <div className="category-header">
                     <h2 className="category-name">{category.name}</h2>
                     <button  onClick={handleAccordionToggle} className="accordion-toggle">
-                         {showAccordion ?'-' : '+'}
+                         {showAccordion ? '-' : '+'}
                     </button>
                 </div>
         

@@ -5,6 +5,7 @@ import { ResCategory } from "./ResCategory";
 
 export const RestaurantMenuCard = () => {
   const [restaurantDetails, setRestaurantDetails] = useState([]);
+  const [showAccordionIndex, setShowAccordionIndex] = useState(null);
 
   const { id } = useParams();
 
@@ -39,6 +40,8 @@ export const RestaurantMenuCard = () => {
         <ResCategory
           key={index}
           category={category}
+          showAccordion={index ===  showAccordionIndex}
+          showAccordionIndex={()=> setShowAccordionIndex(index)}
         />
       ))}
     </div>
